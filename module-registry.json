@@ -1,0 +1,265 @@
+{
+  "repoUrl": "https://github.com/Bhavya-Jain5/HLG-Module",
+  "modules": [
+    {
+      "name": "HLGBase",
+      "displayName": "HLG Base",
+      "type": "module",
+      "version": "2.0.0",
+      "description": "Glue code for HLG-Module on new-gen SA. Ships SA wrapper, GameManager, LevelSpawner, LevelData base, GameSettings/ColorData scripts, color materials, fonts, and a Game.prefab (GameManager + LevelSpawner). Post-install: deletes any pre-existing ColorData.cs/asset, moves project's GameSettings.asset to Resources/, instantiates Game.prefab into Game.unity, rewires GameManager.settings + GameSettings.colorData, and sets Game.unity main camera to the HLG ortho preset.",
+      "sourcePaths": [
+        "Assets/Modules/HLGBase/Scripts",
+        "Assets/Modules/HLGBase/Materials",
+        "Assets/Modules/HLGBase/Fonts",
+        "Assets/Modules/HLGBase/Prefabs",
+        "Assets/Modules/HLGBase/Resources/ColorData.asset",
+        "Assets/Modules/HLGBase/Resources/GameSettings.asset"
+      ],
+      "pathOverrides": [
+        { "src": "Assets/Modules/HLGBase/Resources/ColorData.asset", "dest": "Assets/Resources/ColorData.asset" },
+        { "src": "Assets/Modules/HLGBase/Resources/GameSettings.asset", "dest": "Assets/Resources/GameSettings.asset" }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "HLGDocs",
+      "displayName": "HLG Docs",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Documentation for HLG base systems",
+      "sourcePaths": ["Assets/docs"],
+      "dependencies": []
+    },
+    {
+      "name": "HLGLog",
+      "displayName": "HLG Log",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Tagged buffered logger with code-configured filtering, collapse, and stack capture. F12 flushes the buffer.",
+      "sourcePaths": ["Assets/Modules/HLGLog"],
+      "dependencies": []
+    },
+    {
+      "name": "GridModule",
+      "displayName": "Grid Module",
+      "type": "module",
+      "version": "2.1.0",
+      "description": "Core 2D grid system with extensible CellType SO pattern",
+      "sourcePaths": ["Assets/Modules/GridModule"],
+      "dependencies": []
+    },
+    {
+      "name": "CellTypeBorder",
+      "displayName": "CellType: Border",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Border CellType SO asset and partial class extension",
+      "sourcePaths": ["Assets/Modules/CellTypeBorder"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "GridBorder",
+      "displayName": "Grid Border",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Border spawning around grid edges and on Border-type cells",
+      "sourcePaths": ["Assets/Modules/GridBorder"],
+      "dependencies": ["GridModule", "CellTypeBorder"]
+    },
+    {
+      "name": "GridBorderSmooth",
+      "displayName": "Grid Border Smooth",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Smooth border with bitmask mesh selection and inner corners",
+      "sourcePaths": ["Assets/Modules/GridBorderSmooth"],
+      "dependencies": ["GridModule", "CellTypeBorder"]
+    },
+    {
+      "name": "CurrencyManager",
+      "displayName": "Currency Manager",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Coin system with persistence, UI animation, and currency events",
+      "sourcePaths": [
+        "Assets/CurrencyManager",
+        "Assets/StandardAssets/Scripts/Use/SaveData.cs",
+        "Assets/External Assets/Epic Toon FX/Materials/Basics/glow1_ADD 1.mat",
+        "Assets/External Assets/Epic Toon FX/Textures/sparkle2.png",
+        "Assets/External Assets/UIOverlayParticles",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material  CoinTextOutline.mat"
+      ],
+      "pathOverrides": [
+        { "src": "Assets/StandardAssets/Scripts/Use/SaveData.cs", "dest": "Assets/StandardAssets/Scripts/Use/SaveData.cs" },
+        { "src": "Assets/External Assets/Epic Toon FX/Materials/Basics/glow1_ADD 1.mat", "dest": "Assets/External Assets/Epic Toon FX/Materials/Basics/glow1_ADD 1.mat" },
+        { "src": "Assets/External Assets/Epic Toon FX/Textures/sparkle2.png", "dest": "Assets/External Assets/Epic Toon FX/Textures/sparkle2.png" },
+        { "src": "Assets/External Assets/UIOverlayParticles", "dest": "Assets/External Assets/UIOverlayParticles" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material  CoinTextOutline.mat", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material  CoinTextOutline.mat" }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "Boosters",
+      "displayName": "Boosters",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Booster framework with manager, button UI, unlock controller. Extend BoosterData for custom boosters.",
+      "sourcePaths": [
+        "Assets/Boosters",
+        "Assets/Art/Sprites/0-Boosters-obstacles",
+        "Assets/Art/Sprites/UI/buttons.png",
+        "Assets/Art/Sprites/UI/deactive.png",
+        "Assets/Art/Sprites/UI/lock_2 kopyas\u0131.png",
+        "Assets/Art/Sprites/UI/play_btn_booster.png",
+        "Assets/Art/Sprites/UI/tutorial_panel.png",
+        "Assets/Art/Sprites/UI/tutorial_panel 2.png",
+        "Assets/Art/Sprites/UI/Tutorial/h-hand.png",
+        "Assets/Art/Sprites/UI/img-coin.Png",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material BoosterCounterText.mat",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material LevelText.mat",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF WhiteBorder.mat",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF_LVL.mat",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF_red.mat"
+      ],
+      "pathOverrides": [
+        { "src": "Assets/Art/Sprites/0-Boosters-obstacles", "dest": "Assets/Art/Sprites/0-Boosters-obstacles" },
+        { "src": "Assets/Art/Sprites/UI/buttons.png", "dest": "Assets/Art/Sprites/UI/buttons.png" },
+        { "src": "Assets/Art/Sprites/UI/deactive.png", "dest": "Assets/Art/Sprites/UI/deactive.png" },
+        { "src": "Assets/Art/Sprites/UI/lock_2 kopyas\u0131.png", "dest": "Assets/Art/Sprites/UI/lock_2 kopyas\u0131.png" },
+        { "src": "Assets/Art/Sprites/UI/play_btn_booster.png", "dest": "Assets/Art/Sprites/UI/play_btn_booster.png" },
+        { "src": "Assets/Art/Sprites/UI/tutorial_panel.png", "dest": "Assets/Art/Sprites/UI/tutorial_panel.png" },
+        { "src": "Assets/Art/Sprites/UI/tutorial_panel 2.png", "dest": "Assets/Art/Sprites/UI/tutorial_panel 2.png" },
+        { "src": "Assets/Art/Sprites/UI/Tutorial/h-hand.png", "dest": "Assets/Art/Sprites/UI/Tutorial/h-hand.png" },
+        { "src": "Assets/Art/Sprites/UI/img-coin.Png", "dest": "Assets/Art/Sprites/UI/img-coin.Png" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material BoosterCounterText.mat", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material BoosterCounterText.mat" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material LevelText.mat", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material LevelText.mat" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF WhiteBorder.mat", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF WhiteBorder.mat" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF_LVL.mat", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF_LVL.mat" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF_red.mat", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF_red.mat" }
+      ],
+      "dependencies": ["CurrencyManager", "SpotlightOverlay"]
+    },
+    {
+      "name": "SpotlightOverlay",
+      "displayName": "Spotlight Overlay",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Full-screen overlay with animated spotlight cutout for tutorials and unlock ceremonies",
+      "sourcePaths": ["Assets/Modules/SpotlightOverlay"],
+      "dependencies": []
+    },
+    {
+      "name": "Onboarding",
+      "displayName": "Onboarding",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Tutorial/onboarding system with hand pointer, step sequencing, and dismiss triggers",
+      "sourcePaths": [
+        "Assets/Modules/Onboarding",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset",
+        "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material_BlackOutline.mat",
+        "Assets/Art/Sprites/UI/tutorial_panel 2.png",
+        "Assets/Art/Sprites/UI/Tutorial/h-hand.png"
+      ],
+      "pathOverrides": [
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF.asset" },
+        { "src": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material_BlackOutline.mat", "dest": "Assets/StandardAssets/Internals/Assets/TMP/Mikado/Mikado-Black SDF Material_BlackOutline.mat" },
+        { "src": "Assets/Art/Sprites/UI/tutorial_panel 2.png", "dest": "Assets/Art/Sprites/UI/tutorial_panel 2.png" },
+        { "src": "Assets/Art/Sprites/UI/Tutorial/h-hand.png", "dest": "Assets/Art/Sprites/UI/Tutorial/h-hand.png" }
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "ObstacleHidden",
+      "displayName": "Obstacle: Hidden",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Hidden cells with content underneath — tap to reveal with animation and particles",
+      "sourcePaths": ["Assets/Modules/Obstacles/Hidden"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "ObstacleConnected",
+      "displayName": "Obstacle: Connected",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Connected cell pairs that must be tapped together to unlock",
+      "sourcePaths": ["Assets/Modules/Obstacles/Connected"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "ObstaclePipe",
+      "displayName": "Obstacle: Pipe",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Pipe cells that block traversal — no content underneath, obstacle IS the visual",
+      "sourcePaths": ["Assets/Modules/Obstacles/Pipe"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "ObstacleArrow",
+      "displayName": "Obstacle: Arrow",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Arrow cells with directional unlock — content underneath revealed by matching direction",
+      "sourcePaths": ["Assets/Modules/Obstacles/Arrow"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "ObstacleMetalBlock",
+      "displayName": "Obstacle: Metal Block",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Destructible metal blocks with health — content underneath revealed when destroyed",
+      "sourcePaths": ["Assets/Modules/Obstacles/MetalBlock"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "ObstacleSpawner",
+      "displayName": "Obstacle: Spawner",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Spawner cells that generate new content — no content underneath, obstacle IS the visual",
+      "sourcePaths": ["Assets/Modules/Obstacles/Spawner"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "ObstacleWoodenCrate",
+      "displayName": "Obstacle: Wooden Crate",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Destructible wooden crates with health — content underneath revealed when broken",
+      "sourcePaths": ["Assets/Modules/Obstacles/WoodenCrate"],
+      "dependencies": ["GridModule"]
+    },
+    {
+      "name": "ScreenshotTool",
+      "displayName": "Screenshot Tool",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "Dev-only App Store/Play Store screenshot capture tool — pause time with F, step frames with D, dual-capture phone+iPad with S. Singleton ScreenshotMaker prefab + editor-side Game View resizer.",
+      "sourcePaths": ["Assets/ScreenshotTool"],
+      "dependencies": []
+    },
+    {
+      "name": "ClaudeSetup",
+      "displayName": "Claude Code Setup",
+      "type": "module",
+      "version": "1.0.0",
+      "description": "CLAUDE.md, rules, skills, and hooks for docs-driven Claude Code workflow",
+      "sourcePaths": [
+        "Assets/ClaudeSetup/CLAUDE.md",
+        "Assets/ClaudeSetup/.claude"
+      ],
+      "pathOverrides": [
+        { "src": "Assets/ClaudeSetup/CLAUDE.md", "dest": "CLAUDE.md" },
+        { "src": "Assets/ClaudeSetup/.claude", "dest": ".claude" }
+      ],
+      "dependencies": []
+    }
+  ]
+}
